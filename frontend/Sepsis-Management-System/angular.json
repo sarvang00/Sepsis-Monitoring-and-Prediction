@@ -119,6 +119,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "Sepsis-Management-System"
+    }
+  },
+  "defaultProject": "Sepsis-Management-System",
+  "cli": {
+    "analytics": false
+  }
 }
