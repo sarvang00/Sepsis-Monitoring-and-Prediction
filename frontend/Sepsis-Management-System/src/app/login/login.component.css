@@ -1,0 +1,27 @@
+.psw{
+
+    float: right;
+}
+.login-logo{
+
+    height: 120px;
+    width: 120px;
+}
+
+.main-heading{
+
+    text-align: center;
+}
+
+#head1{
+        font-size: xx-large;
+        font-family: 'Times New Roman', Times, serif;
+        font-style: italic;
+        padding-left: 2%;
+}
+.page {
+    background-color: #a8a8a81c;
+}
+.main-form{
+    background-color: rgb(255, 255, 255);
+}

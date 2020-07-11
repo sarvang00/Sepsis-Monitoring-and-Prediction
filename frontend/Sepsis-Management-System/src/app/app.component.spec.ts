@@ -20,16 +20,16 @@ describe('AppComponent', () => {
     expect(app).toBeTruthy();
   });
 
-  it(`should have as title 'Sepsis-Management-System'`, () => {
+  it(`should have as title 'Sepsis'`, () => {
     const fixture = TestBed.createComponent(AppComponent);
     const app = fixture.componentInstance;
-    expect(app.title).toEqual('Sepsis-Management-System');
+    expect(app.title).toEqual('Sepsis');
   });
 
   it('should render title', () => {
     const fixture = TestBed.createComponent(AppComponent);
     fixture.detectChanges();
     const compiled = fixture.nativeElement;
-    expect(compiled.querySelector('.content span').textContent).toContain('Sepsis-Management-System app is running!');
+    expect(compiled.querySelector('.content span').textContent).toContain('Sepsis app is running!');
   });
 });
