@@ -1,2 +1,6 @@
-<p>home works!</p>
-<button class="form-control border-right-0 btn btn-primary" (click)="onlogout()" >Logout</button>
+
+<div >
+<app-navbar-admin *ngIf="isAdmin"></app-navbar-admin></div>
+<div >
+<app-navbardoctor *ngIf="isDoctor"></app-navbardoctor></div>
+<router-outlet></router-outlet>

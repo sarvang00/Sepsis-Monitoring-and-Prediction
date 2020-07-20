@@ -11,12 +11,33 @@ import { HomeComponent } from './home/home.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ForgotpasswordComponent } from './forgotpassword/forgotpassword.component';
 import { HomeguardGuard } from './homeguard.guard';
+import { NavbardoctorComponent } from './home/navbardoctor/navbardoctor.component';
+import { NavbarAdminComponent } from './home/navbar-admin/navbar-admin.component';
+import { PatientListComponent } from './home/patient-list/patient-list.component';
+import { DoctorListComponent } from './home/doctor-list/doctor-list.component';
+import { ANALYSISComponent } from './home/analysis/analysis.component';
+import { PrecautionsComponent } from './home/precautions/precautions.component';
+import { AddPatientComponent } from './home/add-patient/add-patient.component';
+import { AddDoctorComponent } from './home/add-doctor/add-doctor.component';
+import { AddVitalsComponent } from './home/add-vitals/add-vitals.component';
+
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
     HomeComponent,
-    ForgotpasswordComponent
+    ForgotpasswordComponent,
+
+    NavbardoctorComponent,
+    NavbarAdminComponent,
+    PatientListComponent,
+    DoctorListComponent,
+    ANALYSISComponent,
+    PrecautionsComponent,
+    AddPatientComponent,
+    AddDoctorComponent,
+    AddVitalsComponent,
+   
   ],
   imports: [
     BrowserModule,
@@ -26,27 +47,49 @@ import { HomeguardGuard } from './homeguard.guard';
     ReactiveFormsModule,
     RouterModule.forRoot([
       {
-        path: 'login',
-        component: LoginComponent,
+        path:'login',
+        component: LoginComponent, 
         canActivate:[LOGINAUTHGuard]
-        
-      
-      
       },
       {
-        path: 'home',
-        component: HomeComponent,canActivate:[HomeguardGuard]
-        
-      
-      
+        path:'home',
+        component: HomeComponent,canActivate:[HomeguardGuard],
+        children: [
+          {
+            path: 'patientlist', // child route path
+            component: PatientListComponent // child route component that the router renders
+          },
+          {
+            path: 'Doctorlist', // child route path
+            component: DoctorListComponent // child route component that the router renders
+          },
+          {
+            path: 'precautions', // child route path
+            component: PrecautionsComponent // child route component that the router renders
+          },
+          {
+            path: 'Analysis', // child route path
+            component: ANALYSISComponent // child route component that the router renders
+          },
+          {
+            path: 'AddPatient', // child route path
+            component: AddPatientComponent // child route component that the router renders
+          },
+          {
+            path: 'AddDoctor', // child route path
+            component: AddDoctorComponent // child route component that the router renders
+          },
+          {
+            path: 'AddVital', // child route path
+            component: AddVitalsComponent // child route component that the router renders
+          }
+        ] 
       },
       {
-        path: 'forgotpassword',
+        path:'forgotpassword',
         component: ForgotpasswordComponent,
-        
-      
-      
-      }])
+      }
+    ])
   ],
   providers: [AuthgaurdserviceService],
   bootstrap: [AppComponent]

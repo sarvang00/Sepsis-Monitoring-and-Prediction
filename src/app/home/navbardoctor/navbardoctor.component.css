@@ -1,0 +1,13 @@
+.logout:hover{
+  background-color: rgb(255, 112, 112);
+  color:white;
+  font-weight: bold;
+}
+.navbar-light .navbar-text a, .navbar-light .navbar-text a:focus, .navbar-light .navbar-text a:hover {
+  color: white;
+}
+
+.cur:hover{
+      border-radius: 20px;
+      background-color: lightgray;
+}

@@ -9,11 +9,22 @@ import {AuthgaurdserviceService} from 'src/app/authgaurdservice.service'
 })
 export class HomeComponent implements OnInit {
 
+  isDoctor;
+  isAdmin;
+
   constructor( private route: ActivatedRoute,
     private auth: AuthgaurdserviceService,
     private router: Router) { }
 
   ngOnInit(): void {
+    if(localStorage.getItem('Doctor')=="true")
+    {
+      this.isDoctor=true;
+    }
+    else{
+      this.isAdmin=true;
+
+    }
   }
   
   onlogout(){
@@ -21,7 +32,7 @@ export class HomeComponent implements OnInit {
     this.auth.logout(); 
     this.router.navigate(['../login'],{relativeTo :this.route})
 
-  
+    
 }
 
 

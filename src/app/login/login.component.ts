@@ -52,8 +52,15 @@ export class LoginComponent implements OnInit {
         localStorage.setItem('RememberEmail',null);
         localStorage.removeItem('RememberEmail');
       }
-      localStorage.setItem('isLoggedIn', "true");  
-      this.router.navigate(['../home'],{relativeTo :this.route})
+      localStorage.setItem('isLoggedIn', "true");
+      if(this.FORMLOGIN.value.email=="priyangspatel12345@gmail.com")
+      {      localStorage.setItem('Doctor',"true")
+      }
+      else{
+        localStorage.setItem('Doctor',"false")
+      }
+
+      this.router.navigate(['../home/patientlist'],{relativeTo :this.route})
      
     }
     else{

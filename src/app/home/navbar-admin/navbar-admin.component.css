@@ -1,0 +1,41 @@
+.login-logo{
+
+    height: auto;
+    width: 50px;
+}
+
+.navbar {
+    padding-top:0px; 
+    padding-bottom:0px;
+}
+
+.logout{
+    background-color: rgb(27, 123, 233);
+    color:white;
+}
+
+.navbar-text a {
+    color: rgba(255, 255, 255, 0.9);
+}
+
+.navbar-text a:hover {
+    color: rgb(27, 123, 233);
+}
+.logout:hover{
+    background-color: white;
+    color:rgb(27, 123, 233);
+}
+
+.logout:hover{
+    background-color: rgb(255, 112, 112);
+    color:white;
+    font-weight: bold;
+  }
+  .navbar-light .navbar-text a, .navbar-light .navbar-text a:focus, .navbar-light .navbar-text a:hover {
+    color: white;
+  }
+  
+  .cur:hover{
+        border-radius: 20px;
+        background-color: lightgray;
+  }

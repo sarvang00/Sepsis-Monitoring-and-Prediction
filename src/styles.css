@@ -1,1 +1,311 @@
 /* You can add global styles to this file, and also import other style files */
+.navbar {
+   
+    position: fixed;
+    top: 0;
+    width: 100%;
+    border:1px solid lightgray;
+    box-shadow: 2px 1px lightgray;
+    z-index: 999;
+  }
+
+.login-logo{
+
+    height: auto;
+    width: 50px;
+}
+
+.navbar {
+    padding-top:0px; 
+    padding-bottom:0px;
+}
+
+.logout{
+    background-color: rgb(27, 123, 233);
+    color:white;
+}
+
+.navbar-text a {
+    color: rgba(255, 255, 255, 0.9);
+}
+
+.navbar-text a:hover {
+    color: rgb(68, 113, 165);
+}
+.logout:hover{
+    background-color: rgb(255, 112, 112);
+    color:white;
+    font-weight: bold;
+}
+
+
+.container-fluid{
+    padding-left: 2%;
+    padding-right: 2%;
+}
+
+
+  .sidebar {
+    margin: 0;
+    margin-top: 62px;
+    padding: 0;
+    width: 200px;
+    border: 1px solid lightgray;
+    background-color: white;
+    box-shadow: 1px 4px lightgray;
+    position: fixed;
+    height: 100%;
+  
+  }
+  
+
+  div.content {
+      
+    margin-left: 200px;
+    padding: 1px 16px;
+    height: 1000px;
+  }
+  
+
+ 
+
+
+  @media screen and (max-width: 600px) {
+    .sidebar {
+      width: 100%;
+      
+      height: auto;
+      z-index: -1;
+      position: relative;
+    }
+    .main-row{
+        margin-top: 82px;
+    }
+  
+    .sidebar a {float: left;}
+    
+    div.content {margin-left: 0;}
+  }
+  
+  @media screen and (max-width: 400px) {
+    .sidebar {
+        width: 100%;
+        z-index: -1;
+        position: relative;
+      }
+      .main-content{
+        margin-top: 0px;
+        padding:1px 1px;
+    }
+      .main-row{
+        margin-top: 2px;
+    }
+    .sidebar a {
+      text-align: center;
+      float: none;
+    }
+    
+  }
+
+  .main-content{
+      margin-top: 62px;
+  }
+
+
+
+  .as-link1,.as-link2,.as-link3{
+    text-align: center;
+    background-color: white;
+    border-radius:10px ;
+    color: rgb(27, 123, 233);
+    margin: 10px;
+
+}
+
+
+.sidebar a {
+    display: block;
+    color: rgb(12, 12, 12);
+    padding: 16px;
+    width: 87%;
+    text-decoration: none;
+    display: inline-block;
+
+  }
+   
+ 
+  
+ 
+  
+  .active-tab1,.active-tab2,.active-tab3{
+    width: 2px;
+    height:50px;
+    border: 2px solid rgb(240, 138, 138);
+    float:right;
+    border-radius: 20px;
+    margin-top: 12px;
+    display: none;
+}
+
+.navi{
+    margin-right: 40px;
+}
+
+.cur{
+    cursor: pointer;
+}
+.patient-head{
+    background-color:rgb(27, 123, 233);
+    color:white;
+}
+
+/* main content */
+.img-patient{
+    margin: 20px;
+    border-radius:30px ;
+    width:120px;
+    border: 1px solid gray;
+}
+
+.main-content{
+    margin-top: 62px;
+}
+
+.patient-info{
+    margin-top: 15px;
+    padding: 10px;
+}
+
+.doc-note{
+    padding: 15px;
+    padding-top: 0px;
+}
+
+.patient-card{
+    border-radius: 20px;
+    box-shadow: 2px 1px gray;
+}
+
+.notes{
+    color:rgb(9, 115, 253);
+}
+
+.sepsis-positive{
+    color: red;
+}
+
+.patient-card-container{
+
+    padding-top: 15px;
+    padding-bottom: 15px;
+}
+
+#notepre{
+  padding: 30px;
+}
+
+.img-patient-2{
+  width:60%;
+}
+
+
+   
+    
+   
+    
+    /*set extra style for the cancel button*/ 
+    .cancelbtn { 
+        width: auto; 
+        padding: 10px 18px; 
+        background-color: #f44336; 
+    } 
+    
+    
+    
+    /*set padding to the container*/ 
+    .container { 
+        padding: 16px; 
+    } 
+      
+    /*set the forgot password text*/ 
+    span.psw { 
+        float: right; 
+        padding-top: 16px; 
+    } 
+    
+    /*set the Modal background*/ 
+    .modal { 
+        display: none; 
+        position: fixed; 
+        z-index: 1; 
+        left: 0; 
+        top: 0; 
+        width: 100%; 
+        overflow: auto; 
+        background-color: rgb(0, 0, 0); 
+        background-color: rgba(0, 0, 0, 0.4); 
+        padding-top: 60px; 
+    } 
+    
+    /*style the model content box*/ 
+    .modal-content { 
+        background-color: #fefefe; 
+        margin: 5% auto 15% auto; 
+        border: 1px solid #888; 
+        border-radius: 10px;
+        width: 80%; 
+    } 
+    
+    .content2{
+      margin-left: 200px;
+    padding: 1px 16px;
+    }
+    /*style the close button*/ 
+    .close { 
+        position: absolute; 
+        right: 25px; 
+        top: 0; 
+        color: #000; 
+        font-size: 35px; 
+        font-weight: bold; 
+    } 
+      
+    .close:hover, 
+    .close:focus { 
+        color: red; 
+        cursor: pointer; 
+    } 
+    
+    /* add zoom animation*/ 
+    .animate { 
+        -webkit-animation: animatezoom 0.6s; 
+        animation: animatezoom 0.6s 
+    } 
+      
+    @-webkit-keyframes animatezoom { 
+        from { 
+            -webkit-transform: scale(0) 
+        } 
+        to { 
+            -webkit-transform: scale(1) 
+        } 
+    } 
+      
+    @keyframes animatezoom { 
+        from { 
+            transform: scale(0) 
+        } 
+        to { 
+            transform: scale(1) 
+        } 
+    } 
+      
+    @media screen and (max-width: 300px) { 
+        span.psw { 
+            display: block; 
+            float: none; 
+        } 
+        .cancelbtn { 
+            width: 100%; 
+        } 
+    }
