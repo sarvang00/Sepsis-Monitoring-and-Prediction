@@ -4,9 +4,76 @@
     <div class="main-content">
         <div class="main-row row">
 
-        <div class="col-lg-12 text-center patient-head">ADD  VITALS</div>
-         
+        <div class="col-lg-12 col-md-12 col-sm-12 text-center patient-head">ADD VITALS</div>
+         <div class="col-lg-12 col-md-12 col-sm-12 container">
+            
+                <form [formGroup]="FORMADDVitals" (ngSubmit)="onSubmit()">
+                    <div class="form-row">
+                    <div class="col-md-4 col-sm-12">
+                        <label for="CaseSelect">Select Case:</label>
+                        <input type="text" class="form-control" placeholder="Case ID" formControlName="CaseID" name="CaseID" 
+                        [ngClass]="{ 'is-invalid': submitted && f.CaseID.errors }">
+                        <div *ngIf="submitted && f.CaseID.errors" class="invalid-feedback">
+                          <div *ngIf="f.CaseID.errors.required">This Field is required</div>
+                      </div>
 
-             </div>
+                    </div>
+                   
+                    <div class="col-12">
+                        <br><br>
+                    </div>
+                    <div class="col-md-4 col-sm-12">
+                         <label for="hr">HR</label>
+                      <input type="text" class="form-control" placeholder="HR" formControlName="HR" name="HR" 
+                      [ngClass]="{ 'is-invalid': submitted && f.HR.errors }">
+                      <div *ngIf="submitted && f.HR.errors" class="invalid-feedback">
+                        <div *ngIf="f.HR.errors.required">This Field is required</div>
+                    </div>
+                    </div>
+                    <div class="col-md-4 col-sm-12">
+                        <label for="o2s">O2 Sat.</label>
+                      <input type="text" class="form-control" placeholder="O2Sat"  formControlName="o2sat" name="o2sat" 
+                      [ngClass]="{ 'is-invalid': submitted && f.o2sat.errors }">
+                      <div *ngIf="submitted && f.o2sat.errors" class="invalid-feedback">
+                        <div *ngIf="f.o2sat.errors.required">This Field is required</div>
+                    </div>
+                    </div>
+                    <div class="col-md-4 col-sm-12">
+                        <label for="sbp">SBP</label>
+                      <input type="text" class="form-control" placeholder="SBP" formControlName="SBP" name="SBP" 
+                      [ngClass]="{ 'is-invalid': submitted && f.SBP.errors }">
+                      <div *ngIf="submitted && f.SBP.errors" class="invalid-feedback">
+                        <div *ngIf="f.SBP.errors.required">This Field is required</div>
+                    </div>
+                    </div>
+                    <div class="col-md-4 col-sm-12">
+                        <label for="map">MAP</label>
+                      <input type="text" class="form-control" placeholder="MAP" formControlName="MAP" name="MAP" 
+                      [ngClass]="{ 'is-invalid': submitted && f.MAP.errors }">
+                      <div *ngIf="submitted && f.MAP.errors" class="invalid-feedback">
+                        <div *ngIf="f.MAP.errors.required">This Field is required</div>
+                    </div>
+                    </div>
+                    <div class="col-md-4 col-sm-12">
+                        <label for="resp">Resp.</label>
+                      <input type="text" class="form-control" placeholder="Resp"  formControlName="Resp" name="Resp" 
+                      [ngClass]="{ 'is-invalid': submitted && f.Resp.errors }">
+                      <div *ngIf="submitted && f.Resp.errors" class="invalid-feedback">
+                        <div *ngIf="f.Resp.errors.required">This Field is required</div>
+                    </div>
+                    </div>
+                   
+                  </div>
+                  <div class="row">
+                  <div class="form-group col-lg-12 col-md-12 col-sm-12 text-center">
+                      <br>
+                    <button type="submit" class="btn btn-primary">Submit</button>
+                  </div>
+                </div>
+                </form>
+            
+         </div>
+
+        </div>
     </div>
-</div>
+</div>  

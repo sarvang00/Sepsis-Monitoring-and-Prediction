@@ -1,4 +1,3 @@
-
 <nav class="navbar navbar-light navbar-expand-md navigation-clean-button" style="background-color: rgb(255, 255, 255);">
     <div class="container-fluid">
         <a class="navbar-brand" (click)="onHome()"> <img src="assets/img/mainlogo.png" class="login-logo">
@@ -10,23 +9,35 @@
                 navigation</span><span class="navbar-toggler-icon"></span></button>
         <div class="collapse navbar-collapse" id="navcol-1">
             <ul class="nav navbar-nav mr-auto">
-                <li class="nav-item navi" role="presentation"><a class="nav-link active cur home" (click)="onHome()">HOME</a>
+                <li class="nav-item navi" role="presentation"><a class="nav-link active cur home"
+                        (click)="onHome()">HOME</a>
                 </li>
-                <li class="nav-item navi" role="presentation"><a class="nav-link cur vitals" (click)="onvitals()">ADD VITALS</a>
-                </li>
-                <li class="nav-item navi" role="presentation"><a class="nav-link cur PRECAUTIONS"
-                        (click)="onprecautions()">PRECAUTIONS</a></li>
+
                 <li class="nav-item dropdown"><a class="dropdown-toggle nav-link cur cur adduser" data-toggle="dropdown"
                         aria-expanded="false ">ADD USER </a>
                     <div class="dropdown-menu" role="menu"><a class="dropdown-item cur adddoctor" role="presentation"
-                            (click)="onaddDoctor()">DOCTOR</a><a class="dropdown-item cur addpatient" role="presentation"
-                            (click)="onaddPatient()">PAITENT</a></div>
+                            (click)="onaddDoctor()">DOCTOR</a><a class="dropdown-item cur addpatient"
+                            role="presentation" (click)="onaddPatient()">PAITENT</a></div>
                 </li>
+                <li class="nav-item navi" role="presentation"><a class="nav-link cur case" (click)="oncase()">ADD
+                        CASE</a>
+                </li>
+
+                <li class="nav-item navi" role="presentation"><a class="nav-link cur vitals" (click)="onvitals()">ADD
+                        VITALS</a>
+                </li>
+
+
+
+                <li class="nav-item navi" role="presentation"><a class="nav-link cur PRECAUTIONS"
+                        (click)="onprecautions()">PRECAUTIONS</a></li>
+
+
             </ul><span class="navbar-text actions"><a class="btn btn-light action-button logout" role="button"
                     (click)="onlogout()">Logout</a></span>
         </div>
     </div>
-</nav> 
+</nav>
 
 
 <div class="sidebar">

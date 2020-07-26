@@ -1,12 +1,230 @@
-
-
 <div class="content ">
-    <div class="main-content">
-        <div class="main-row row">
+  <div class="main-content">
+    <div class="main-row row">
 
-        <div class="col-lg-12 text-center patient-head">ADD DOCTOR</div>
-         
+      <div class="col-lg-12 col-md-12 col-sm-12 text-center patient-head">ADD DOCTOR</div>
+      <div class="col-lg-12 col-md-12 col-sm-12 container">
+        <form [formGroup]="FORMDoctorADD" (ngSubmit)="onSubmit()">
+          <div class="form-row">
 
-             </div>
+            <div class="col-lg-12 col-md-12 col-sm-12 text-left">
+              <h4>General Info</h4>
+            </div>
+            <div class="form-group col-md-6">
+              <label for="inputEmail4">Name</label>
+              <input type="text" class="form-control" formControlName="Name" name="Name" id="name" placeholder="Name"
+                [ngClass]="{ 'is-invalid': submitted && fc.Name.errors }">
+                <div *ngIf="submitted && fc.Name.errors" class="invalid-feedback">Enter a valid Name</div>
+              <div *ngIf="submitted && fc.Name.errors" class="invalid-feedback">
+                <div *ngIf="fc.Name.errors.required">Name is required</div>
+              </div>
+            </div>
+            <div class="form-group col-md-6">
+              <label for="inputPassword4">D.O.B</label>
+              <input type="date" class="form-control" formControlName="DOB" name="DOB" id="dob" placeholder="mm/dd/yyyy"
+                [ngClass]="{ 'is-invalid': submitted && fc.DOB.errors }">
+              <div *ngIf="submitted && fc.DOB.errors" class="invalid-feedback">
+                <div *ngIf="fc.DOB.errors.required">This Field is required</div>
+              </div>
+            </div>
+
+            <div class="form-group col-md-6">
+              <label for="inputEmail4">Blood Group</label>
+              <input type="text" class="form-control" formControlName="BloodGroup" name="BloodGroup" id="BloodGroup"
+                placeholder="Blood group" [ngClass]="{ 'is-invalid': submitted && fc.BloodGroup.errors }">
+                <div *ngIf="submitted && fc.BloodGroup.errors" class="invalid-feedback">Enter a valid Blood Group</div>
+              <div *ngIf="submitted && fc.BloodGroup.errors" class="invalid-feedback">
+                <div *ngIf="fc.BloodGroup.errors.required">This Field is required</div>
+              </div>
+            </div>
+
+            <div class="form-group col-md-6">
+              <label for="inputEmail4">Gender</label>
+              <div class="row">
+                <div class="form-group col-lg-3 col-md-3 col-sm-2">
+                  <div class="custom-control custom-radio">
+                    <input id="male" type="radio" class="custom-control-input" value="male" name="gender"
+                      formControlName="gender">
+                    <label class="custom-control-label" for="male">Male</label>
+                  </div>
+
+                </div>
+                <div class="form-group  col-lg-3 col-md-3 col-sm-2">
+                  <div class="custom-control custom-radio">
+                    <input id="female" type="radio" class="custom-control-input" value="female" name="gender"
+                      formControlName="gender">
+                    <label class="custom-control-label" for="female">Female</label>
+                  </div>
+
+                </div>
+              </div>
+            </div>
+
+            <div class="form-group col-md-6">
+              <label for="inputEmail4">UserName</label>
+              <input type="text" class="form-control" formControlName="UserName" name="UserName" id="UserName"
+                placeholder="UserName" [ngClass]="{ 'is-invalid': submitted && fc.UserName.errors }">
+              <div *ngIf="submitted && fc.UserName.errors" class="invalid-feedback">
+                <div *ngIf="fc.UserName.errors.required">This Field is required</div>
+              </div>
+            </div>
+            <div class="form-group col-md-6">
+              <label for="inputPassword4">Password</label>
+              <input type="password" class="form-control" formControlName="Password" name="Password" id="Password"
+                placeholder="Password" [ngClass]="{ 'is-invalid': submitted && fc.Password.errors }">
+                <div *ngIf="submitted && fc.Password.errors" class="invalid-feedback">Enter a valid Password</div>
+              <div *ngIf="submitted && fc.Password.errors" class="invalid-feedback">
+                <div *ngIf="fc.Password.errors.required">This Field is required</div>
+              </div>
+            </div>
+
+           
+
+            <div class="col-lg-12 col-md-12 col-sm-12 text-left">
+              <br>
+              <h4>Banking Info</h4>
+            </div>
+            <div class="form-group col-md-6">
+              <label for="aadhar">Aadhar No.</label>
+              <input type="text" class="form-control" formControlName="Aadhar" name="Aadhar" id="aadhar"
+                placeholder="Aadhar Number" [ngClass]="{ 'is-invalid': submitted && fc.Aadhar.errors }">
+                <div *ngIf="submitted && fc.Aadhar.errors" class="invalid-feedback">
+                  Enter a valid Adhar</div>
+              <div *ngIf="submitted && fc.Aadhar.errors" class="invalid-feedback">
+                <div *ngIf="fc.Aadhar.errors.required">This Field is required</div>
+              </div>
+            </div>
+            <div class="form-group col-md-6">
+              <label for="aadhar">Bank Account No.</label>
+              <input type="number" class="form-control" formControlName="BankAccountNo" name="BankAccountNo"
+                id="account" placeholder="Bank Account Number"
+                [ngClass]="{ 'is-invalid': submitted && fc.BankAccountNo.errors }">
+                <div *ngIf="submitted && fc.BankAccountNo.errors" class="invalid-feedback">
+                  Enter a valid Bank Account No.</div>
+              <div *ngIf="submitted && fc.BankAccountNo.errors" class="invalid-feedback">
+                <div *ngIf="fc.BankAccountNo.errors.required">This Field is required</div>
+              </div>
+            </div>
+            <div class="form-group col-md-6">
+              <label for="aadhar">IFSC</label>
+              <input type="text" class="form-control" formControlName="IFSC" name="IFSC" id="ifsc"
+                placeholder="IFSC Code" [ngClass]="{ 'is-invalid': submitted && fc.IFSC.errors }">
+                <div *ngIf="submitted && fc.IFSC.errors" class="invalid-feedback">
+                  Enter a valid IFSC Code</div>
+              <div *ngIf="submitted && fc.IFSC.errors" class="invalid-feedback">
+                <div *ngIf="fc.IFSC.errors.required">This Field is required</div>
+              </div>
+            </div>
+
+            <div class="col-lg-12 col-md-12 col-sm-12 text-left">
+              <br>
+              <h4>Skills</h4>
+            </div>
+
+            <div class="form-group col-md-6">
+              <label for="aadhar">Qualification</label>
+              <input type="text" class="form-control" formControlName="Qualification" name="Qualification"
+                id="Qualification" placeholder="Qualification"
+                [ngClass]="{ 'is-invalid': submitted && fc.Qualification.errors }">
+              <div *ngIf="submitted && fc.Qualification.errors" class="invalid-feedback">Enter a valid text</div>
+              <div *ngIf="submitted && fc.Qualification.errors" class="invalid-feedback">
+                <div *ngIf="fc.Qualification.errors.required">This Field is required</div>
+              </div>
+            </div>
+            <div class="form-group col-md-6">
+              <label for="aadhar">Specialization</label>
+              <input type="text" class="form-control" formControlName="Specialization" name="Specialization"
+                id="Specialization" placeholder="Specialization"
+                [ngClass]="{ 'is-invalid': submitted && fc.Specialization.errors }">
+                <div *ngIf="submitted && fc.Specialization.errors" class="invalid-feedback">Enter a valid Text</div>
+              <div *ngIf="submitted && fc.Specialization.errors" class="invalid-feedback">
+                <div *ngIf="fc.Specialization.errors.required">This Field is required</div>
+              </div>
+            </div> 
+
+
+            <div class="col-lg-12 col-md-12 col-sm-12 text-left">
+              <br>
+              <h4>Contact Info</h4>
+            </div>
+            <div class="form-group col-md-6">
+              <label for="aadhar">Email</label>
+              <input type="email" class="form-control" formControlName="Email" name="Email" id="email-contact"
+                placeholder="Email" [ngClass]="{ 'is-invalid': submitted && fc.Email.errors }">
+              <div *ngIf="submitted && fc.Email.errors" class="invalid-feedback">Enter a valid Email
+              </div>
+              <div *ngIf="submitted && fc.Email.errors" class="invalid-feedback">
+                <div *ngIf="fc.Email.errors.required">This Field is required</div>
+              </div>
+            </div>
+            <div class="form-group col-md-6">
+              <label for="primary-mobile">Mobile</label>
+              <input type="text" class="form-control" formControlName="Mobile" name="Mobile" id="mobile"
+                placeholder="Mobile no." [ngClass]="{ 'is-invalid': submitted && fc.Mobile.errors }">
+                <div *ngIf="submitted && fc.Mobile.errors" class="invalid-feedback">
+                  Enter a Valid Number
+                </div>
+              <div *ngIf="submitted && fc.Mobile.errors" class="invalid-feedback">
+                <div *ngIf="fc.Mobile.errors.required">This Field is required</div>
+              </div>
+            </div>
+            <div class="form-group col-md-6">
+              <label for="emergency-mobile">Emergency Contact No.</label>
+              <input type="text" class="form-control" formControlName="EmergencyContactNo" name="EmergencyContactNo"
+                id="EmergencyContactNo" placeholder="Mobile no."
+                [ngClass]="{ 'is-invalid': submitted && fc.EmergencyContactNo.errors }">
+                <div *ngIf="submitted && fc.FamilyContactPersonNumber.errors" class="invalid-feedback">
+                  Enter a Valid Number
+                </div>
+              <div *ngIf="submitted && fc.EmergencyContactNo.errors" class="invalid-feedback">
+                <div *ngIf="fc.EmergencyContactNo.errors.required">This Field is required</div>
+              </div>
+            </div>
+            <div class="form-group col-md-6">
+              <label for="family-name">Family Contact Person Name</label>
+              <input type="text" class="form-control" formControlName="FamilyContactPersonName"
+                name="FamilyContactPersonName" id="family-name" placeholder="Name"
+                [ngClass]="{ 'is-invalid': submitted && fc.FamilyContactPersonName.errors }">
+                <div *ngIf="submitted && fc.FamilyContactPersonName.errors" class="invalid-feedback">Enter a valid Name
+                </div>
+              <div *ngIf="submitted && fc.FamilyContactPersonName.errors" class="invalid-feedback">
+                <div *ngIf="fc.FamilyContactPersonName.errors.required">This Field is required</div>
+              </div>
+            </div>
+            <div class="form-group col-md-6">
+              <label for="family-rel">Family Contact Person Relationship</label>
+              <input type="text" class="form-control" formControlName="FamilyContactPersonRelationship"
+                name="FamilyContactPersonRelationship" id="family-rel" placeholder="eg. Father"
+                [ngClass]="{ 'is-invalid': submitted && fc.FamilyContactPersonRelationship.errors }">
+                <div *ngIf="submitted && fc.FamilyContactPersonRelationship.errors" class="invalid-feedback">
+                Enter a valid Relationship
+                </div>
+              <div *ngIf="submitted && fc.FamilyContactPersonRelationship.errors" class="invalid-feedback">
+                <div *ngIf="fc.FamilyContactPersonRelationship.errors.required">This Field is required</div>
+              </div>
+            </div>
+            <div class="form-group col-md-6">
+              <label for="family-mobile">Family Contact Person Number</label>
+              <input type="text" class="form-control" formControlName="FamilyContactPersonNumber"
+                name="FamilyContactPersonNumber" id="FamilyContactPersonNumber" placeholder="Mobile no."
+                [ngClass]="{ 'is-invalid': submitted && fc.FamilyContactPersonNumber.errors }">
+                <div *ngIf="submitted && fc.FamilyContactPersonNumber.errors" class="invalid-feedback">
+                  Enter a Valid Number
+                </div>
+              <div *ngIf="submitted && fc.FamilyContactPersonNumber.errors" class="invalid-feedback">
+                <div *ngIf="fc.FamilyContactPersonNumber.errors.required">This Field is required</div>
+              </div>
+            </div>
+            <div class="form-group col-lg-12 col-md-12 col-sm-12 text-center">
+              <button type="submit" class="btn btn-primary">Submit</button>
+            </div>
+          </div>
+
+
+
+        </form>
+      </div>
+
     </div>
+  </div>
 </div>

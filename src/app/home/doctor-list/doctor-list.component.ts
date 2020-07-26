@@ -19,7 +19,7 @@ export class DoctorListComponent implements OnInit {
       $('.vitals').css('color', 'gray');
       $('.PRECAUTIONS').css('color', 'gray');
       $('.homet').css('color', 'gray');
-      
+      $('.case').css('color', 'gray');
 
     });
     $(document).ready(function() {

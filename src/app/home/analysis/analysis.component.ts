@@ -19,7 +19,7 @@ export class ANALYSISComponent implements OnInit {
       $('.homet').css('color', 'gray');
       $('.vitals').css('color', 'gray');
       $('.PRECAUTIONS').css('color', 'gray');
-    
+      $('.case').css('color', 'gray');
 
     });
 

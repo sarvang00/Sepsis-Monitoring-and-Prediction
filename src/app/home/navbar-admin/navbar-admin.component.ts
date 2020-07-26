@@ -58,6 +58,10 @@ onprecautions()
 
 }
 
+oncase(){
+  this.router.navigate(['./AddCase'],{relativeTo :this.route})
+
+}
 
 
 onvitals(){

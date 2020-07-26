@@ -1,26 +1,28 @@
 import { Component, OnInit } from '@angular/core';
 import * as $ from 'jquery' 
+
 import { FormGroup, FormControl, Validators, FormBuilder,AbstractControl} from '@angular/forms';
 import { Router, ActivatedRoute } from '@angular/router'
 @Component({
-  selector: 'app-add-vitals',
-  templateUrl: './add-vitals.component.html',
-  styleUrls: ['./add-vitals.component.css']
+  selector: 'app-add-case',
+  templateUrl: './add-case.component.html',
+  styleUrls: ['./add-case.component.css']
 })
-export class AddVitalsComponent implements OnInit {
+export class AddCaseComponent implements OnInit {
 
-    // model
+  // model
 
-    FORMADDVitals: FormGroup;
-    submitted = false;
-    // model over
+  FORMADDCASE: FormGroup;
+  submitted = false;
+  // model over
+
 
   constructor(private formBuilder: FormBuilder,  private route: ActivatedRoute,
     private router: Router) { }
 
 
   ngOnInit(): void {
-
+    
     $(document).ready(function() {
       $('.active-tab1').css('display', 'none');
       $('.as-link1').css( 'background-color', 'white');
@@ -38,48 +40,46 @@ export class AddVitalsComponent implements OnInit {
       $('.as-link3').css( 'border-radius', '20px');
      
     });
- 
+
     
     $(document).ready(function() {
       $('.adddoctor').css('color', 'gray');
       $('.adduser').css('color', 'gray');
       $('.addpatient').css('color', 'gray');
       $('.home').css('color', 'gray');
-      $('.vitals').css('color', 'black');
+      $('.vitals').css('color', 'gray');
       $('.PRECAUTIONS').css('color', 'gray');
-      $('.case').css('color', 'gray');
+      $('.case').css('color', 'black');
     
 
     });
 
+
+
     // form 
 
     
-    this.FORMADDVitals = this.formBuilder.group({
+    this.FORMADDCASE = this.formBuilder.group({
 
       
-      CaseID: ['',[Validators.required]],
-      HR: ['',[Validators.required]],
-      o2sat: ['',[Validators.required]],
-      SBP: ['',[Validators.required]],
-      MAP: ['',[Validators.required]],
-      Resp: ['',[Validators.required]] 
+      PatientID: ['',[Validators.required]],
+      PrelimnaryAnalysis: ['',[Validators.required]],
+      FirstMeet: ['',[Validators.required]],
 
   
   });
 
   }
 
-  
-  get f() { return this.FORMADDVitals.controls; }
+  get f() { return this.FORMADDCASE.controls; }
 
   onSubmit(){
    
     this.submitted = true;
 
 
-    if(this.FORMADDVitals.valid){
-      console.log(this.FORMADDVitals);}
+    if(this.FORMADDCASE.valid){
+      console.log(this.FORMADDCASE);}
     }
 
 }

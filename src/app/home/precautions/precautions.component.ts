@@ -19,6 +19,7 @@ export class PrecautionsComponent implements OnInit {
       $('.home').css('color', 'gray');
       $('.vitals').css('color', 'gray');
       $('.PRECAUTIONS').css('color', 'black');
+      $('.case').css('color', 'gray');
     
 
     });
@@ -44,6 +45,7 @@ export class PrecautionsComponent implements OnInit {
     $(document).ready(function() {
       $('.PRECAUTIONS').css('color', 'black');
       $('.Homet').css('color', 'gray');
+      $('.case').css('color', 'gray');
 
     });
   }

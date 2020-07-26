@@ -38,4 +38,5 @@
   .cur:hover{
         border-radius: 20px;
         background-color: lightgray;
+        color: white;
   }

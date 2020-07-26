@@ -20,6 +20,7 @@ import { PrecautionsComponent } from './home/precautions/precautions.component';
 import { AddPatientComponent } from './home/add-patient/add-patient.component';
 import { AddDoctorComponent } from './home/add-doctor/add-doctor.component';
 import { AddVitalsComponent } from './home/add-vitals/add-vitals.component';
+import { AddCaseComponent } from './home/add-case/add-case.component';
 
 @NgModule({
   declarations: [
@@ -37,6 +38,7 @@ import { AddVitalsComponent } from './home/add-vitals/add-vitals.component';
     AddPatientComponent,
     AddDoctorComponent,
     AddVitalsComponent,
+    AddCaseComponent,
    
   ],
   imports: [
@@ -82,6 +84,10 @@ import { AddVitalsComponent } from './home/add-vitals/add-vitals.component';
           {
             path: 'AddVital', // child route path
             component: AddVitalsComponent // child route component that the router renders
+          },
+          {
+            path: 'AddCase', // child route path
+            component: AddCaseComponent // child route component that the router renders
           }
         ] 
       },
