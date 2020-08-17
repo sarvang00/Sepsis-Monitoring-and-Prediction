@@ -1,10 +1,10 @@
 <div class="content ">
     <div class="main-content">
         <div class="main-row row">
-
+ 
 <!-- box model pop up start -->
             <div id="id01" class="modal"> 
-                <div class="content2">
+                <!-- <div class="content2"> -->
                 <div class="modal-content animate" > 
                     <div class="imgcontainer"> 
                         <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">×</span> 
@@ -14,15 +14,32 @@
                     <div class="container"> 
                       <div class="col-lg-12 col-md-12 col-dm-12">
                         <div class="row">
-                            <div class="col-md-4 col-sm-12 text-center"><img class="card-img-top img-patient-2"
-                                    src="assets/img/patient_profile.png" alt="Card image cap"></div>
+                            <div class="col-md-4 col-sm-12 text-center" ><img class="card-img-top img-patient-2"
+                                    src={{Image_}} alt="Card image cap"></div>
                             <div class="col-md-1"></div>
                             <div class="col-md-7 col-sm-12">
-                                <div class="patient-info">
-                                    <p>Name:<span class="notes"> Priyang Shaileshbhai Patel</span><br></p>
-                                    <p>Allocated Doctor Id: <span class="notes">281812</span><br></p>
-                                    <p>Blood Group:<span class="notes"> o+</span><br></p>
-                                    <p>Sepsis Status: <span class="sepsis-positive">Positive</span></p>
+                                <div class="patient-info row">
+                                    <div class="col-lg-12"><h3>Patient Info</h3><br></div>
+
+                                    <div class="col-lg-12">Name:<span class="notes">&nbsp;{{Name_}}</span></div>
+                                    <div class="col-lg-6">Age:<span class="notes">&nbsp;{{Age_}}</span></div>
+                                    <div class="col-lg-6">Blood Group:<span class="notes"> &nbsp;{{BloodGroup}}</span></div>
+                                    <div class="col-lg-6">Doctor Name: <span class="notes">&nbsp;{{allocation}}</span></div>
+                                    <div class="col-lg-6">Allocated Doctor Id: <span class="notes">&nbsp;{{doc_id_}}</span></div>
+                                    <div class="col-lg-12">Sepsis Status: <span class="sepsis-positive">Positive</span></div>
+                            
+                                    
+                                </div>
+                            </div>
+                            <div class="col-lg-12 ">
+                                <div class="doc-note"><br>
+                                <h5>Other Info</h5>
+                                <div class="row">
+                                    <div class="col-lg-3">Contact Person Name:<span class="notes">&nbsp;{{FamilyContactPersonName}}</span></div>
+                                    <div class="col-lg-2">Relation:<span class="notes"> &nbsp;{{FamilyContactPersonRelationship}}</span></div>
+                                    <div class="col-lg-4">Contact Person Number: <span class="notes">&nbsp;{{FamilyContactPersonNumber}}</span></div>
+                                  
+                                </div>
                                 </div>
                             </div>
                             <div class="col-lg-12">
@@ -40,7 +57,7 @@
           
                   
                 </div> 
-                </div>
+                <!-- </div> -->
             </div> 
 <!-- box model pop up box -->
 
@@ -49,18 +66,19 @@
 <!-- heading over -->
 
 <!-- cards start -->
-            <div class="col-lg-4 col-md-6 col-sm-12  patient-card-container ">
+            
+            <div class="col-lg-4 col-md-6 col-sm-12  patient-card-container " *ngFor="let item of lengtharray; let i = index">
 
                 <div class="card patient-card">
                     <div class="row">
                         <div class="col-md-4 col-sm-12"><img class="card-img-top img-patient"
-                                src="assets/img/patient_profile.png" alt="Card image cap"></div>
+                                src={{Image[i]}} alt="Card image cap"></div>
                         <div class="col-md-1"></div>
                         <div class="col-md-7 col-sm-12">
                             <div class="patient-info">
-                                <p>Name:<span class="notes"> Priyang Shaileshbhai Patel</span><br></p>
-                                <p>Allocated Doctor Id: <span class="notes">281812</span><br></p>
-                                <p>Blood Group:<span class="notes"> o+</span><br></p>
+                                <p>Name:<span class="notes">{{Name[i]}}</span><br></p>
+                                <p>Allocated Doctor Id: <span class="notes">{{doc_id[i]}}</span><br></p>
+                                <p>Blood Group:<span class="notes"> {{BloodGroup_[i]}}</span><br></p>
                                 <p>Sepsis Status: <span class="sepsis-positive">Positive</span></p>
                             </div>
                         </div>
@@ -69,7 +87,8 @@
                                 Dr's Note: <span class="notes">Patient should be treated with
                                     care and love.Your recovery from sepsis depends ....<span><a
                                             style="color: rgb(238, 125, 125);text-decoration: none;cursor: pointer;"
-                                            onclick="document.getElementById('id01').style.display='block'"  >more</a></span>
+                                            onclick="document.getElementById('id01').style.display='block'" 
+                                            (click)="getPatientInfo(Patientid[i])" >more</a></span>
                                 </span>
                             </div>
                         </div>
@@ -80,224 +99,7 @@
 
             </div>
 
-            <div class="col-lg-4 col-md-6 col-sm-12  patient-card-container ">
-
-                <div class="card patient-card">
-                    <div class="row">
-                        <div class="col-md-4 col-sm-12"><img class="card-img-top img-patient"
-                                src="assets/img/patient_profile.png" alt="Card image cap"></div>
-                        <div class="col-md-1"></div>
-                        <div class="col-md-7 col-sm-12">
-                            <div class="patient-info">
-                                <p>Name:<span class="notes"> Priyang Shaileshbhai Patel</span><br></p>
-                                <p>Allocated Doctor Id: <span class="notes">281812</span><br></p>
-                                <p>Blood Group:<span class="notes"> o+</span><br></p>
-                                <p>Sepsis Status: <span class="sepsis-positive">Positive</span></p>
-                            </div>
-                        </div>
-                        <div class="col-lg-12">
-                            <div class="doc-note">
-                                Dr's Note: <span class="notes">Patient should be treated with
-                                    care and love.Your recovery from sepsis depends ....<span><a
-                                            style="color: rgb(238, 125, 125);text-decoration: none;cursor: pointer;"
-                                            onclick="document.getElementById('id01').style.display='block'"  >more</a></span>
-                                </span>
-                            </div>
-                        </div>
-                    </div>
-
-
-                </div>
-
-            </div>
-
-            <div class="col-lg-4 col-md-6 col-sm-12  patient-card-container ">
-
-                <div class="card patient-card">
-                    <div class="row">
-                        <div class="col-md-4 col-sm-12"><img class="card-img-top img-patient"
-                                src="assets/img/patient_profile.png" alt="Card image cap"></div>
-                        <div class="col-md-1"></div>
-                        <div class="col-md-7 col-sm-12">
-                            <div class="patient-info">
-                                <p>Name:<span class="notes"> Priyang Shaileshbhai Patel</span><br></p>
-                                <p>Allocated Doctor Id: <span class="notes">281812</span><br></p>
-                                <p>Blood Group:<span class="notes"> o+</span><br></p>
-                                <p>Sepsis Status: <span class="sepsis-positive">Positive</span></p>
-                            </div>
-                        </div>
-                        <div class="col-lg-12">
-                            <div class="doc-note">
-                                Dr's Note: <span class="notes">Patient should be treated with
-                                    care and love.Your recovery from sepsis depends ....<span><a
-                                            style="color: rgb(238, 125, 125);text-decoration: none;cursor: pointer;"
-                                            onclick="document.getElementById('id01').style.display='block'"  >more</a></span>
-                                </span>
-                            </div>
-                        </div>
-                    </div>
-
-
-                </div>
-
-            </div>
-
-            <div class="col-lg-4 col-md-6 col-sm-12  patient-card-container ">
-
-                <div class="card patient-card">
-                    <div class="row">
-                        <div class="col-md-4 col-sm-12"><img class="card-img-top img-patient"
-                                src="assets/img/patient_profile.png" alt="Card image cap"></div>
-                        <div class="col-md-1"></div>
-                        <div class="col-md-7 col-sm-12">
-                            <div class="patient-info">
-                                <p>Name:<span class="notes"> Priyang Shaileshbhai Patel</span><br></p>
-                                <p>Allocated Doctor Id: <span class="notes">281812</span><br></p>
-                                <p>Blood Group:<span class="notes"> o+</span><br></p>
-                                <p>Sepsis Status: <span class="sepsis-positive">Positive</span></p>
-                            </div>
-                        </div>
-                        <div class="col-lg-12">
-                            <div class="doc-note">
-                                Dr's Note: <span class="notes">Patient should be treated with
-                                    care and love.Your recovery from sepsis depends ....<span><a
-                                            style="color: rgb(238, 125, 125);text-decoration: none;cursor: pointer;"
-                                            onclick="document.getElementById('id01').style.display='block'"  >more</a></span>
-                                </span>
-                            </div>
-                        </div>
-                    </div>
-
-
-                </div>
-
-            </div>
-
-
-            <div class="col-lg-4 col-md-6 col-sm-12  patient-card-container ">
-
-                <div class="card patient-card">
-                    <div class="row">
-                        <div class="col-md-4 col-sm-12"><img class="card-img-top img-patient"
-                                src="assets/img/patient_profile.png" alt="Card image cap"></div>
-                        <div class="col-md-1"></div>
-                        <div class="col-md-7 col-sm-12">
-                            <div class="patient-info">
-                                <p>Name:<span class="notes"> Priyang Shaileshbhai Patel</span><br></p>
-                                <p>Allocated Doctor Id: <span class="notes">281812</span><br></p>
-                                <p>Blood Group:<span class="notes"> o+</span><br></p>
-                                <p>Sepsis Status: <span class="sepsis-positive">Positive</span></p>
-                            </div>
-                        </div>
-                        <div class="col-lg-12">
-                            <div class="doc-note">
-                                Dr's Note: <span class="notes">Patient should be treated with
-                                    care and love.Your recovery from sepsis depends ....<span><a
-                                            style="color: rgb(238, 125, 125);text-decoration: none;cursor: pointer;"
-                                            onclick="document.getElementById('id01').style.display='block'"  >more</a></span>
-                                </span>
-                            </div>
-                        </div>
-                    </div>
-
-
-                </div>
-
-            </div>
-
-
-            <div class="col-lg-4 col-md-6 col-sm-12  patient-card-container ">
-
-                <div class="card patient-card">
-                    <div class="row">
-                        <div class="col-md-4 col-sm-12"><img class="card-img-top img-patient"
-                                src="assets/img/patient_profile.png" alt="Card image cap"></div>
-                        <div class="col-md-1"></div>
-                        <div class="col-md-7 col-sm-12">
-                            <div class="patient-info">
-                                <p>Name:<span class="notes"> Priyang Shaileshbhai Patel</span><br></p>
-                                <p>Allocated Doctor Id: <span class="notes">281812</span><br></p>
-                                <p>Blood Group:<span class="notes"> o+</span><br></p>
-                                <p>Sepsis Status: <span class="sepsis-positive">Positive</span></p>
-                            </div>
-                        </div>
-                        <div class="col-lg-12">
-                            <div class="doc-note">
-                                Dr's Note: <span class="notes">Patient should be treated with
-                                    care and love.Your recovery from sepsis depends ....<span><a
-                                            style="color: rgb(238, 125, 125);text-decoration: none;cursor: pointer;"
-                                            onclick="document.getElementById('id01').style.display='block'"  >more</a></span>
-                                </span>
-                            </div>
-                        </div>
-                    </div>
-
-
-                </div>
-
-            </div>
-
-            <div class="col-lg-4 col-md-6 col-sm-12  patient-card-container ">
-
-                <div class="card patient-card">
-                    <div class="row">
-                        <div class="col-md-4 col-sm-12"><img class="card-img-top img-patient"
-                                src="assets/img/patient_profile.png" alt="Card image cap"></div>
-                        <div class="col-md-1"></div>
-                        <div class="col-md-7 col-sm-12">
-                            <div class="patient-info">
-                                <p>Name:<span class="notes"> Priyang Shaileshbhai Patel</span><br></p>
-                                <p>Allocated Doctor Id: <span class="notes">281812</span><br></p>
-                                <p>Blood Group:<span class="notes"> o+</span><br></p>
-                                <p>Sepsis Status: <span class="sepsis-positive">Positive</span></p>
-                            </div>
-                        </div>
-                        <div class="col-lg-12">
-                            <div class="doc-note">
-                                Dr's Note: <span class="notes">Patient should be treated with
-                                    care and love.Your recovery from sepsis depends ....<span><a
-                                            style="color: rgb(238, 125, 125);text-decoration: none;cursor: pointer;"
-                                            onclick="document.getElementById('id01').style.display='block'"  >more</a></span>
-                                </span>
-                            </div>
-                        </div>
-                    </div>
-
-
-                </div>
-
-            </div>
-
-            <div class="col-lg-4 col-md-6 col-sm-12  patient-card-container ">
-
-                <div class="card patient-card">
-                    <div class="row">
-                        <div class="col-md-4 col-sm-12"><img class="card-img-top img-patient"
-                                src="assets/img/patient_profile.png" alt="Card image cap"></div>
-                        <div class="col-md-1"></div>
-                        <div class="col-md-7 col-sm-12">
-                            <div class="patient-info">
-                                <p>Name:<span class="notes"> Priyang Shaileshbhai Patel</span><br></p>
-                                <p>Allocated Doctor Id: <span class="notes">281812</span><br></p>
-                                <p>Blood Group:<span class="notes"> o+</span><br></p>
-                                <p>Sepsis Status: <span class="sepsis-positive">Positive</span></p>
-                            </div>
-                        </div>
-                        <div class="col-lg-12">
-                            <div class="doc-note">
-                                Dr's Note: <span class="notes">Patient should be treated with
-                                    care and love.Your recovery from sepsis depends ....<span><a
-                                            style="color: rgb(238, 125, 125);text-decoration: none;cursor: pointer;"
-                                            onclick="document.getElementById('id01').style.display='block'"  >more</a></span>
-                                </span>
-                            </div>
-                        </div>
-                    </div>
-
-
-                </div>
-
-            </div>
+           
 
         </div>
     </div>

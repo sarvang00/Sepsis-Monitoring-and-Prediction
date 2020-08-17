@@ -96,7 +96,7 @@
             </div>
             <div class="form-group col-md-6">
               <label for="aadhar">Bank Account No.</label>
-              <input type="number" class="form-control" formControlName="BankAccountNo" name="BankAccountNo"
+              <input type="text" class="form-control" formControlName="BankAccountNo" name="BankAccountNo"
                 id="account" placeholder="Bank Account Number"
                 [ngClass]="{ 'is-invalid': submitted && fc.BankAccountNo.errors }">
                 <div *ngIf="submitted && fc.BankAccountNo.errors" class="invalid-feedback">
@@ -215,10 +215,22 @@
                 <div *ngIf="fc.FamilyContactPersonNumber.errors.required">This Field is required</div>
               </div>
             </div>
+            <div class="form-group col-md-3">
+              <label for="emergency-mobile">Profile Photo</label>
+              <br>
+              <input type="file" (change)="onSelectFile($event)" id='input' placeholder="upload" formControlName="Identification"
+              name="Identification" 
+              [ngClass]="{ 'is-invalid': submitted && fc.Identification.errors }">
+            <div *ngIf="submitted && fc.Identification.errors" class="invalid-feedback">
+              <div *ngIf="fc.Identification.errors.required">This Field is required</div>
+            </div>
+            </div>
+          </div>
+         
             <div class="form-group col-lg-12 col-md-12 col-sm-12 text-center">
               <button type="submit" class="btn btn-primary">Submit</button>
             </div>
-          </div>
+           
 
 
 

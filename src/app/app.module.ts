@@ -21,7 +21,7 @@ import { AddPatientComponent } from './home/add-patient/add-patient.component';
 import { AddDoctorComponent } from './home/add-doctor/add-doctor.component';
 import { AddVitalsComponent } from './home/add-vitals/add-vitals.component';
 import { AddCaseComponent } from './home/add-case/add-case.component';
-
+import { HttpClientModule } from '@angular/common/http';
 @NgModule({
   declarations: [
     AppComponent,
@@ -46,6 +46,7 @@ import { AddCaseComponent } from './home/add-case/add-case.component';
     AppRoutingModule,
     FontAwesomeModule,
     FormsModule,
+    HttpClientModule,
     ReactiveFormsModule,
     RouterModule.forRoot([
       {
@@ -97,7 +98,7 @@ import { AddCaseComponent } from './home/add-case/add-case.component';
       }
     ])
   ],
-  providers: [AuthgaurdserviceService],
+  providers: [AuthgaurdserviceService,AppComponent],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -12,9 +12,11 @@
                     <div class="col-lg-12 col-md-12 col-sm-12 text-left">
                         <h4>General Info</h4>
                     </div>
+
+
                     <div class="form-group col-md-6">
                         <label for="inputEmail4">Name</label>
-                        <input type="text" class="form-control" id="name" placeholder="Name"formControlName="Name" name="Name" id="name" placeholder="Name"
+                        <input type="text" class="form-control" id="name" placeholder="Name"formControlName="Name" name="Name"  placeholder="Name"
                         [ngClass]="{ 'is-invalid': submitted && fc.Name.errors }">
                         <div *ngIf="submitted && fc.Name.errors" class="invalid-feedback">Enter a valid Name</div>
                       <div *ngIf="submitted && fc.Name.errors" class="invalid-feedback">
@@ -23,23 +25,31 @@
                     
                     </div>
 
-                      <div class="form-group col-md-6">
-                        <label for="inputPassword4">D.O.B</label>
-                        <input type="date" class="form-control" id="dob" placeholder="mm/dd/yyyy"   [ngClass]="{ 'is-invalid': submitted && fc.DOB.errors }">
-                        <div *ngIf="submitted && fc.DOB.errors" class="invalid-feedback">
-                          <div *ngIf="fc.DOB.errors.required">This Field is required</div>
-                        </div>
-                      
-                      </div>
+                    <div class="form-group col-md-6">
+                      <label for="inputEmail4">D.O.B</label>
+                      <input type="date" class="form-control" id="DOB" placeholder="DOB"formControlName="DOB" name="DOB" 
+                      [ngClass]="{ 'is-invalid': submitted && fc.DOB.errors }">
+                      <div *ngIf="submitted && fc.DOB.errors" class="invalid-feedback">Enter a valid Date</div>
+                    <div *ngIf="submitted && fc.DOB.errors" class="invalid-feedback">
+                      <div *ngIf="fc.DOB.errors.required">This is required</div>
+                    </div>
+                  
+                  </div>
 
-                      <div class="form-group col-md-6">
-                        <label for="inputEmail4">Blood Group</label>
-                        <input type="text" class="form-control" id="Blood" placeholder="Blood Group"[ngClass]="{ 'is-invalid': submitted && fc.BloodGroup.errors }">
-                        <div *ngIf="submitted && fc.BloodGroup.errors" class="invalid-feedback">Enter a valid Blood Group</div>
-                      <div *ngIf="submitted && fc.BloodGroup.errors" class="invalid-feedback">
-                        <div *ngIf="fc.BloodGroup.errors.required">This Field is required</div>
-                      </div>
-                      </div>
+                  <div class="form-group col-md-6">
+                    <label for="inputEmail4">BloodGroup</label>
+                    <input type="text" class="form-control" id="BloodGroup" placeholder="BloodGroup" formControlName="BloodGroup" name="BloodGroup"  
+                    [ngClass]="{ 'is-invalid': submitted && fc.BloodGroup.errors }">
+                    <div *ngIf="submitted && fc.BloodGroup.errors" class="invalid-feedback">Enter a valid BloodGroup</div>
+                  <div *ngIf="submitted && fc.BloodGroup.errors" class="invalid-feedback">
+                    <div *ngIf="fc.BloodGroup.errors.required">BloodGroup is required</div>
+                  </div>
+                
+                </div>
+
+                      
+
+                      
 
                       <div class="form-group col-md-6">
                         <label for="inputEmail4">Gender</label>
@@ -67,7 +77,7 @@
                       <label class="my-1 mr-2" for="inlineFormCustomSelectPref">Allocated</label>
                       <select formControlName="Allocated" name="Allocated" class="form-control"
                         [ngClass]="{ 'is-invalid': submitted && fc.Allocated.errors }">
-                        <option *ngFor="let doctor of doctors" [value]="doctor">{{doctor}}</option>
+                        <option *ngFor="let doctor of Name;" [value]="doctor">{{doctor}}</option>
                       </select>
                       <div *ngIf="submitted && fc.Allocated.errors" class="invalid-feedback">
                         <div *ngIf="fc.Allocated.errors.required">This Field is required</div>
@@ -127,16 +137,28 @@
                   </div>
                   </div>
                   <div class="form-group col-md-3">
+                    <label for="emergency-mobile">Patient Profile Document</label>
+                    <br>
+                    <input type="file" (change)="onSelectFile($event)"  placeholder="upload"  formControlName="Image"
+                    name="Image" 
+                    [ngClass]="{ 'is-invalid': submitted && fc.Image.errors }">
+                  <div *ngIf="submitted && fc.Image.errors" class="invalid-feedback">
+                    <div *ngIf="fc.Image.errors.required">This Field is required</div>
+                  </div>
+                  
+                  </div>
+
+                  <div class="form-group col-md-3">
                     <label for="emergency-mobile">Patient Identification Document</label>
                     <br>
-                    <input type="file" (change)="onSelectFile($event)" id="doc" placeholder="upload" formControlName="Identification"
+                    <input type="file" (change)="onSelectFileId($event)" id="doc" placeholder="upload" formControlName="Identification"
                     name="Identification" 
                     [ngClass]="{ 'is-invalid': submitted && fc.Identification.errors }">
                   <div *ngIf="submitted && fc.Identification.errors" class="invalid-feedback">
                     <div *ngIf="fc.Identification.errors.required">This Field is required</div>
                   </div>
                   </div>
-                  
+                
                   <div class="form-group col-lg-12 col-md-12 col-sm-12 text-center">
                     <button type="submit" class="btn btn-primary">Submit</button>
                 

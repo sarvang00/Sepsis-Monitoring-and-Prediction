@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import * as $ from 'jquery' 
 import { FormGroup, FormControl, Validators, FormBuilder,AbstractControl} from '@angular/forms';
 import { Router, ActivatedRoute } from '@angular/router'
+import { CaseandVitalService } from 'src/app/service/caseand-vital.service'
+
 @Component({
   selector: 'app-add-vitals',
   templateUrl: './add-vitals.component.html',
@@ -15,7 +17,9 @@ export class AddVitalsComponent implements OnInit {
     submitted = false;
     // model over
 
-  constructor(private formBuilder: FormBuilder,  private route: ActivatedRoute,
+  constructor(private formBuilder: FormBuilder, 
+    private addvital:CaseandVitalService,
+     private route: ActivatedRoute,
     private router: Router) { }
 
 
@@ -79,7 +83,34 @@ export class AddVitalsComponent implements OnInit {
 
 
     if(this.FORMADDVitals.valid){
-      console.log(this.FORMADDVitals);}
+      console.log(this.FORMADDVitals);
+      this.addvital.AddVitals(this.FORMADDVitals.value.CaseID,
+        this.FORMADDVitals.value.HR,
+        this.FORMADDVitals.value.o2sat,
+        this.FORMADDVitals.value.SBP,
+        this.FORMADDVitals.value.MAP,
+        this.FORMADDVitals.value.Resp,
+        
+        ).subscribe(data =>{
+         alert(data["result"]);
+        //  if(data["server"][0]["msg"] == "Package created successfully"){
+        
+        //    this.router.navigate(['./DashboardComponent/packinfoedit'])
+        //  }
+        //  else{
+        //    this.router.navigate(['./DashboardComponent/pack-create'])
+        //  }
+         
+     },
+     err => {
+       console.log(err['status'])
+       if(err['status'] == '400'){
+       }
+       else if(err['status'] == '500'){
+       }
+     }
+     
+     )}
     }
 
 }

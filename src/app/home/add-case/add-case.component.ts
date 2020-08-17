@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import * as $ from 'jquery' 
+import { CaseandVitalService } from 'src/app/service/caseand-vital.service'
 
 import { FormGroup, FormControl, Validators, FormBuilder,AbstractControl} from '@angular/forms';
 import { Router, ActivatedRoute } from '@angular/router'
@@ -12,12 +13,14 @@ export class AddCaseComponent implements OnInit {
 
   // model
 
-  FORMADDCASE: FormGroup;
+  FORMADDCASE: FormGroup; 
   submitted = false;
   // model over
 
 
-  constructor(private formBuilder: FormBuilder,  private route: ActivatedRoute,
+  constructor(private formBuilder: FormBuilder, 
+    private addcase:CaseandVitalService,
+     private route: ActivatedRoute,
     private router: Router) { }
 
 
@@ -79,7 +82,33 @@ export class AddCaseComponent implements OnInit {
 
 
     if(this.FORMADDCASE.valid){
-      console.log(this.FORMADDCASE);}
+      console.log(this.FORMADDCASE);
+      this.addcase.AddCase(this.FORMADDCASE.value.PatientID,
+        this.FORMADDCASE.value.PrelimnaryAnalysis,
+        this.FORMADDCASE.value.FirstMeet
+        ).subscribe(data =>{
+         alert(data["result"]);
+        //  if(data["server"][0]["msg"] == "Package created successfully"){
+        
+        //    this.router.navigate(['./DashboardComponent/packinfoedit'])
+        //  }
+        //  else{
+        //    this.router.navigate(['./DashboardComponent/pack-create'])
+        //  }
+         
+     },
+     err => {
+       console.log(err['status'])
+       if(err['status'] == '400'){
+       }
+       else if(err['status'] == '500'){
+       }
+     }
+     
+     )
+    
+    }
     }
 
 }
+ 
